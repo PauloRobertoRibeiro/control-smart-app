@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+  color: #fff;
+  padding: 15px;
+}
+
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#cabecalho-info {
+  background: #27293d;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+#saldo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4cd137;
+}
+
+#dividas-pendentes {
+  font-size: 16px;
+  color: #fbc531;
+}
+
+/* ===== IDIOMA ===== */
+#seletor-idioma button {
+  background: #353b48;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  margin: 3px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#seletor-idioma button:hover {
+  background: #00a8ff;
+}
+
+/* ===== FORMULÁRIO ===== */
+.add {
+  background: #27293d;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add select,
+.add input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+}
+
+.botao-adicionar {
+  background: #00a8ff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botao-adicionar:hover {
+  background: #0097e6;
+}
+
+/* ===== HISTÓRICO ===== */
+.lista {
+  background: #27293d;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+#historico {
+  list-style: none;
+  margin-top: 10px;
+}
+
+#historico li {
+  background: #353b48;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* ===== CORES POR TIPO ===== */
+.entrada {
+  border-left: 5px solid #4cd137;
+}
+
+.saida {
+  border-left: 5px solid #e84118;
+}
+
+.divida {
+  border-left: 5px solid #fbc531;
+}
+
+/* ===== BOTÕES ===== */
+.botao-apagar {
+  background: #e84118;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.botao-pagar {
+  background: #4cd137;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (min-width: 600px) {
+  body {
+    max-width: 500px;
+    margin: auto;
+  }
+}
+.backup-area {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+#btn-exportar,
+#btn-importar {
+  background: #8c7ae6;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+#btn-exportar:hover,
+#btn-importar:hover {
+  background: #7158e2;
+}
+canvas {
+  margin-top: 15px;
+  background: #27293d;
+  padding: 10px;
+  border-radius: 12px;
+}
+.abas {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.aba-btn {
+  background: #353b48;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.aba-btn.ativa {
+  background: #00a8ff;
+}
+
+.aba-conteudo {
+  display: none;
+}
+
+.aba-conteudo.ativa {
+  display: block;
+}
+
+
+
