@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control Smart</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<header>
+  <h1>💰 Control Smart</h1>
+  <p id="frase-app" style="font-size:13px;opacity:0.8"></p>
+
+
+  <!-- Saldo e Valores -->
+  <div id="cabecalho-info">
+    <p id="saldo">Saldo: €0,00</p>
+    <p id="dividas-pendentes">Valores a Receber: €0,00</p>
+  </div>
+
+  <!-- Idioma -->
+  <div id="seletor-idioma">
+    <button data-idioma="pt">PT</button>
+    <button data-idioma="es">ES</button>
+    <button data-idioma="en">EN</button>
+  </div>
+
+  <!-- PRO -->
+  <div id="upgrade-pro-area">
+    <button id="btn-upgrade-pro">🔓 Desbloquear versão PRO</button>
+  </div>
+</header>
+
+<!-- Abas -->
+<nav class="abas">
+  <button class="aba-btn ativa" data-aba="dashboard">📊 Dashboard</button>
+  <button class="aba-btn" data-aba="historico">📋 Histórico</button>
+  <button class="aba-btn" data-aba="backup">💾 Backup</button>
+</nav>
+
+<main>
+
+  <!-- DASHBOARD -->
+  <section id="dashboard" class="aba-conteudo ativa">
+    <canvas id="graficoFinanceiro"></canvas>
+  </section>
+
+  <!-- HISTÓRICO -->
+  <section id="historico" class="aba-conteudo">
+    <h2 id="historico-titulo">Histórico</h2>
+    <ul id="historico-lista"></ul>
+  </section>
+
+  <!-- BACKUP -->
+  <section id="backup" class="aba-conteudo">
+    <div class="backup-area">
+      <button id="btn-exportar">📥 Exportar Dados</button>
+      <input type="file" id="input-importar" hidden>
+      <button id="btn-importar">📤 Importar Dados</button>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section class="add">
+    <select id="tipo">
+      <option value="entrada">Entrada</option>
+      <option value="saida">Saída</option>
+      <option value="divida">Valores a Receber</option>
+    </select>
+
+    <input type="number" id="valor" placeholder="Valor (€)">
+    <input type="text" id="descricao" placeholder="Descrição">
+
+    <button id="btn-adicionar" class="botao-adicionar">Adicionar</button>
+  </section>
+
+</main>
+
+<!-- Chart -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- App -->
+<script type="module" src="js/app.js"></script>
+
+<!-- Service Worker -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./service-worker.js')
+    .then(() => console.log('Service Worker OK'))
+    .catch(err => console.log('Erro SW:', err));
+}
+</script>
+
+<!-- Abas -->
+<script>
+const botoesAbas = document.querySelectorAll('.aba-btn');
+const conteudosAbas = document.querySelectorAll('.aba-conteudo');
+
+botoesAbas.forEach(botao => {
+  botao.addEventListener('click', () => {
+    const alvo = botao.dataset.aba;
+    botoesAbas.forEach(b => b.classList.remove('ativa'));
+    conteudosAbas.forEach(c => c.classList.remove('ativa'));
+    botao.classList.add('ativa');
+    document.getElementById(alvo).classList.add('ativa');
+  });
+});
+</script>
+
+</body>
+</html>

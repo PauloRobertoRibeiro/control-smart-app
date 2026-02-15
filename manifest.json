@@ -1,0 +1,22 @@
+{
+  "name": "💰 Controle Simples",
+  "short_name": "ControleSimples",
+  "description": "App simples para controlar entradas, saídas e dívidas.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f9f9f9",
+  "theme_color": "#3498db",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
