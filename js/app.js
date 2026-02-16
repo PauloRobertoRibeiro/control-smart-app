@@ -190,3 +190,4 @@ function atualizarGrafico() {
 atualizarInterfaceIdioma();
 atualizarUI(dados, idiomaAtual, traducoes);
 atualizarGrafico();
+
