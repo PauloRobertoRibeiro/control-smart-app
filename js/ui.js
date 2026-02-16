@@ -68,3 +68,4 @@ function limparHistorico() {
 }
 
 window.limparHistorico = limparHistorico;
+
