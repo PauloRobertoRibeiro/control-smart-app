@@ -1,53 +1,101 @@
-# 💰 Controle Simples
+# 💰 Control Smart
 
-Aplicativo simples para controlar entradas, saídas e dívidas, disponível em **português, espanhol e inglês**.  
+Controle financeiro simples, rápido e moderno.
 
-Funciona no navegador e como **PWA (Progressive Web App)**, com histórico de transações, saldo atualizado e dívidas pendentes.
+Aplicativo web instalável (PWA) para controlar:
 
----
+✔ entradas  
+✔ saídas  
+✔ valores a receber  
+✔ histórico financeiro  
 
-## **Funcionalidades**
+Disponível em:
 
-- Adicionar entradas, saídas e dívidas
-- Histórico completo com botões “Apagar” e “Marcar como paga”
-- Multilíngue (PT / ES / EN)
-- Saldo atualizado automaticamente
-- Total de dívidas pendentes
-- Armazenamento local (`localStorage`)
-- Instalação como PWA
-
----
-
-## **Como usar**
-
-1. Abra `index.html` no navegador ou acesse via GitHub Pages.
-2. Use o seletor de idioma para mudar entre PT / ES / EN.
-3. Preencha **Valor** e **Descrição** e clique em **Adicionar**.
-4. Veja o histórico e use os botões para apagar ou marcar dívidas como pagas.
-5. Saldo e dívidas pendentes são atualizados automaticamente.
+🌍 Português  
+🌍 Español  
+🌍 English  
 
 ---
 
-## **Instalação como PWA**
+# 🚀 FUNCIONALIDADES
 
-1. Abra o app no Chrome/Edge/Firefox.
-2. Clique no menu do navegador → **Adicionar à tela inicial**.
-3. O app funcionará offline e manterá os dados salvos.
-
----
-
-## **Backup / Exportação (opcional)**
-
-- Para guardar seus dados, abra o console do navegador e copie o conteúdo de `localStorage` (`localStorage.getItem('dados')`).
-- Pode colar em outro dispositivo ou navegador para restaurar.
+✔ Controle financeiro rápido  
+✔ Histórico automático  
+✔ Multilíngue (PT / ES / EN)  
+✔ Instalação no celular  
+✔ Funciona offline  
+✔ Saldo atualizado em tempo real  
+✔ Controle de dívidas  
+✔ Interface simples e prática  
 
 ---
 
-## **Compatibilidade**
+# 🌐 APP ONLINE
 
-- Desktop e mobile
-- Navegadores modernos (Chrome, Edge, Firefox, Safari)
+https://paulorobertoribeiro.github.io/control-smart-app/
 
 ---
 
-**Desenvolvedor:** Paulo Roberto Ribeiro
+# 📱 INSTALAR NO CELULAR
+
+## Android
+
+1. Abra o app no Chrome
+2. Clique no menu ⋮
+3. Selecione “Adicionar à tela inicial”
+4. Instale o aplicativo
+
+---
+
+## iPhone
+
+1. Abra no Safari
+2. Compartilhar
+3. “Adicionar à Tela de Início”
+
+---
+
+# 💡 IDEAL PARA
+
+✔ Uso pessoal  
+✔ Pequenos negócios  
+✔ Autônomos  
+✔ Controle doméstico  
+✔ Organização financeira simples  
+
+---
+
+# 🔒 TECNOLOGIAS
+
+✔ HTML5  
+✔ CSS3  
+✔ JavaScript Modular  
+✔ PWA  
+✔ Service Worker  
+✔ LocalStorage  
+
+---
+
+# 📦 FUNCIONAMENTO
+
+✔ Histórico automático  
+✔ Dados salvos no navegador  
+✔ Atualização em tempo real  
+✔ Controle de valores pendentes  
+✔ Funcionamento offline básico  
+
+---
+
+# 🚀 FUTURAS MELHORIAS
+
+🔹 Dashboard financeiro  
+🔹 Gráficos  
+🔹 Exportação PDF/Excel  
+🔹 Backup online  
+🔹 Versão PRO  
+
+---
+
+# 👨‍💻 Desenvolvedor
+
+Paulo Roberto Ribeiro
