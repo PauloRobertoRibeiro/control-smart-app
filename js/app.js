@@ -3,12 +3,10 @@ import { criarTransacao } from './transactions.js';
 import { atualizarUI } from './ui.js';
 import { traducoes } from './i18n.js';
 
-// ===== Dados e idioma =====
 let dados = carregarDados();
 let idiomaAtual = carregarIdioma();
 let versaoPro = localStorage.getItem("versaoPro") === "true";
 
-// ===== Interface idioma =====
 function atualizarInterfaceIdioma() {
   document.getElementById('valor').placeholder = traducoes[idiomaAtual].placeholderValor;
   document.getElementById('descricao').placeholder = traducoes[idiomaAtual].placeholderDescricao;
@@ -23,16 +21,14 @@ function atualizarInterfaceIdioma() {
   document.getElementById('frase-app').textContent = traducoes[idiomaAtual].frase;
 }
 
-// ===== Limite FREE =====
 function checarLimiteFree() {
   if (!versaoPro && dados.length >= 30) {
-    alert("Has alcanzado el límite de la versión gratuita (30 movimientos).");
+    alert("Atingiu o limite da versão gratuita (30 movimentos).");
     return false;
   }
   return true;
 }
 
-// ===== Adicionar transação =====
 function adicionarTransacaoSegura(tipo, valor, descricao) {
   if (!checarLimiteFree()) return false;
 
@@ -42,13 +38,13 @@ function adicionarTransacaoSegura(tipo, valor, descricao) {
 
   atualizarUI(dados, idiomaAtual, traducoes);
   atualizarGrafico();
+  return true;
 }
 
-// ===== Botão adicionar =====
 document.getElementById('btn-adicionar').addEventListener('click', () => {
   const tipo = document.getElementById('tipo').value;
   const valor = parseFloat(document.getElementById('valor').value);
-  const descricao = document.getElementById('descricao').value;
+  const descricao = document.getElementById('descricao').value.trim();
 
   if (!valor || !descricao) {
     alert(traducoes[idiomaAtual].alertaValor);
@@ -61,7 +57,6 @@ document.getElementById('btn-adicionar').addEventListener('click', () => {
   document.getElementById('descricao').value = '';
 });
 
-// ===== PRO por código =====
 const CODIGO_PRO = "4321";
 
 const btnUpgrade = document.getElementById('btn-upgrade-pro');
@@ -75,42 +70,35 @@ if (btnUpgrade) {
       localStorage.setItem("versaoPro", "true");
       versaoPro = true;
 
-      alert("🎉 Versión PRO activada");
+      alert("🎉 Versão PRO ativada");
       atualizarUI(dados, idiomaAtual, traducoes);
       atualizarGrafico();
     } else {
-      alert("❌ Código incorrecto");
+      alert("❌ Código incorreto");
     }
   });
 }
 
-// ===== Troca idioma =====
 document.querySelectorAll('[data-idioma]').forEach(btn => {
   btn.addEventListener('click', () => {
-
     idiomaAtual = btn.dataset.idioma;
     salvarIdioma(idiomaAtual);
 
-    // atualizar todos textos
     atualizarInterfaceIdioma();
     atualizarUI(dados, idiomaAtual, traducoes);
     atualizarGrafico();
 
-    // força atualizar toda tela
     setTimeout(() => {
       atualizarInterfaceIdioma();
       atualizarUI(dados, idiomaAtual, traducoes);
       atualizarGrafico();
     }, 50);
-
   });
 });
 
-
-// ===== Backup =====
 document.getElementById('btn-exportar')?.addEventListener('click', () => {
   if (!versaoPro) {
-    alert("Disponible solo en versión PRO");
+    alert("Disponível apenas na versão PRO");
     return;
   }
 
@@ -128,7 +116,7 @@ document.getElementById('btn-exportar')?.addEventListener('click', () => {
 const inputImportar = document.getElementById('input-importar');
 document.getElementById('btn-importar')?.addEventListener('click', () => {
   if (!versaoPro) {
-    alert("Disponible solo en versión PRO");
+    alert("Disponível apenas na versão PRO");
     return;
   }
   inputImportar.click();
@@ -149,17 +137,16 @@ inputImportar?.addEventListener('change', (event) => {
         atualizarGrafico();
       }
     } catch {
-      alert("Error al importar archivo");
+      alert("Erro ao importar arquivo");
     }
   };
   reader.readAsText(file);
 });
 
-// ===== Gráfico =====
 let grafico;
 
 function atualizarGrafico() {
-  if (!versaoPro) return;
+  if (!versaoPro || typeof Chart === 'undefined') return;
 
   const ctx = document.getElementById('graficoFinanceiro').getContext('2d');
 
@@ -186,8 +173,6 @@ function atualizarGrafico() {
   });
 }
 
-// ===== Inicialização =====
 atualizarInterfaceIdioma();
 atualizarUI(dados, idiomaAtual, traducoes);
 atualizarGrafico();
-

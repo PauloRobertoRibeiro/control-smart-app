@@ -1,4 +1,4 @@
-const CACHE_NAME = "control-smart-v1";
+const CACHE_NAME = "control-smart-v2";
 
 const urlsToCache = [
   "./",
@@ -9,7 +9,10 @@ const urlsToCache = [
   "./js/transactions.js",
   "./js/ui.js",
   "./js/i18n.js",
-  "./manifest.json"
+  "./manifest.json",
+  "./icon.png",
+  "./icon-192.png",
+  "./icon-512.png"
 ];
 
 self.addEventListener("install", event => {

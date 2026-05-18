@@ -1,101 +1,65 @@
-# 💰 Control Smart
+# Control Smart
 
 Controle financeiro simples, rápido e moderno.
 
 Aplicativo web instalável (PWA) para controlar:
 
-✔ entradas  
-✔ saídas  
-✔ valores a receber  
-✔ histórico financeiro  
+- Entradas
+- Saídas
+- Valores a receber
+- Histórico financeiro
 
-Disponível em:
+Disponível em Português, Español e English.
 
-🌍 Português  
-🌍 Español  
-🌍 English  
+## Funcionalidades
 
----
+- Controle financeiro rápido
+- Histórico automático
+- Multilíngue (PT / ES / EN)
+- Instalação no celular
+- Funcionamento offline básico
+- Saldo atualizado em tempo real
+- Controle de valores pendentes
+- Interface simples e prática
 
-# 🚀 FUNCIONALIDADES
-
-✔ Controle financeiro rápido  
-✔ Histórico automático  
-✔ Multilíngue (PT / ES / EN)  
-✔ Instalação no celular  
-✔ Funciona offline  
-✔ Saldo atualizado em tempo real  
-✔ Controle de dívidas  
-✔ Interface simples e prática  
-
----
-
-# 🌐 APP ONLINE
+## App Online
 
 https://paulorobertoribeiro.github.io/control-smart-app/
 
----
+## Publicação Android
 
-# 📱 INSTALAR NO CELULAR
+Este projeto é um PWA. Para publicar na Google Play, gere um arquivo `.aab` com um wrapper Android, por exemplo usando PWABuilder ou criando um projeto Android/Capacitor.
 
-## Android
+URL do PWA para empacotar:
 
-1. Abra o app no Chrome
-2. Clique no menu ⋮
-3. Selecione “Adicionar à tela inicial”
-4. Instale o aplicativo
+```text
+https://paulorobertoribeiro.github.io/control-smart-app/
+```
 
----
+## Instalar no Celular
 
-## iPhone
+Android:
 
-1. Abra no Safari
-2. Compartilhar
-3. “Adicionar à Tela de Início”
+1. Abra o app no Chrome.
+2. Abra o menu.
+3. Selecione "Adicionar à tela inicial".
+4. Instale o aplicativo.
 
----
+iPhone:
 
-# 💡 IDEAL PARA
+1. Abra no Safari.
+2. Toque em Compartilhar.
+3. Selecione "Adicionar à Tela de Início".
 
-✔ Uso pessoal  
-✔ Pequenos negócios  
-✔ Autônomos  
-✔ Controle doméstico  
-✔ Organização financeira simples  
+## Tecnologias
 
----
+- HTML5
+- CSS3
+- JavaScript modular
+- PWA
+- Service Worker
+- LocalStorage
 
-# 🔒 TECNOLOGIAS
-
-✔ HTML5  
-✔ CSS3  
-✔ JavaScript Modular  
-✔ PWA  
-✔ Service Worker  
-✔ LocalStorage  
-
----
-
-# 📦 FUNCIONAMENTO
-
-✔ Histórico automático  
-✔ Dados salvos no navegador  
-✔ Atualização em tempo real  
-✔ Controle de valores pendentes  
-✔ Funcionamento offline básico  
-
----
-
-# 🚀 FUTURAS MELHORIAS
-
-🔹 Dashboard financeiro  
-🔹 Gráficos  
-🔹 Exportação PDF/Excel  
-🔹 Backup online  
-🔹 Versão PRO  
-
----
-
-# 👨‍💻 Desenvolvedor
+## Desenvolvedor
 
 Paulo Roberto Ribeiro

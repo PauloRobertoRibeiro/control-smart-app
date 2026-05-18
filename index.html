@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#3498db">
+  <meta name="description" content="Control Smart: controle financeiro simples para entradas, saídas e valores a receber.">
   <title>Control Smart</title>
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="icon.png" type="image/png">
 </head>
 
 <body>
@@ -16,27 +18,22 @@
   <h1>💰 Control Smart</h1>
   <p id="frase-app" style="font-size:13px;opacity:0.8"></p>
 
-
-  <!-- Saldo e Valores -->
   <div id="cabecalho-info">
     <p id="saldo">Saldo: €0,00</p>
     <p id="dividas-pendentes">Valores a Receber: €0,00</p>
   </div>
 
-  <!-- Idioma -->
   <div id="seletor-idioma">
     <button data-idioma="pt">PT</button>
     <button data-idioma="es">ES</button>
     <button data-idioma="en">EN</button>
   </div>
 
-  <!-- PRO -->
   <div id="upgrade-pro-area">
     <button id="btn-upgrade-pro">🔓 Desbloquear versão PRO</button>
   </div>
 </header>
 
-<!-- Abas -->
 <nav class="abas">
   <button class="aba-btn ativa" data-aba="dashboard">📊 Dashboard</button>
   <button class="aba-btn" data-aba="historico">📋 Histórico</button>
@@ -44,19 +41,15 @@
 </nav>
 
 <main>
-
-  <!-- DASHBOARD -->
   <section id="dashboard" class="aba-conteudo ativa">
     <canvas id="graficoFinanceiro"></canvas>
   </section>
 
-  <!-- HISTÓRICO -->
   <section id="historico" class="aba-conteudo">
     <h2 id="historico-titulo">Histórico</h2>
     <ul id="historico-lista"></ul>
   </section>
 
-  <!-- BACKUP -->
   <section id="backup" class="aba-conteudo">
     <div class="backup-area">
       <button id="btn-exportar">📥 Exportar Dados</button>
@@ -65,7 +58,6 @@
     </div>
   </section>
 
-  <!-- FORMULÁRIO -->
   <section class="add">
     <select id="tipo">
       <option value="entrada">Entrada</option>
@@ -78,16 +70,11 @@
 
     <button id="btn-adicionar" class="botao-adicionar">Adicionar</button>
   </section>
-
 </main>
 
-<!-- Chart -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<!-- App -->
 <script type="module" src="js/app.js"></script>
 
-<!-- Service Worker -->
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./service-worker.js')
@@ -96,7 +83,6 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
-<!-- Abas -->
 <script>
 const botoesAbas = document.querySelectorAll('.aba-btn');
 const conteudosAbas = document.querySelectorAll('.aba-conteudo');
