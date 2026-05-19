@@ -1,7 +1,7 @@
 {
   "name": "Control Smart",
   "short_name": "ControlSmart",
-  "description": "App simples para controlar entradas, saídas e valores a receber.",
+  "description": "App simples para controlar entradas, saidas e valores a receber.",
   "id": "https://paulorobertoribeiro.github.io/control-smart-app/",
   "start_url": "https://paulorobertoribeiro.github.io/control-smart-app/",
   "scope": "https://paulorobertoribeiro.github.io/control-smart-app/",

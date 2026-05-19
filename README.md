@@ -1,55 +1,45 @@
 # Control Smart
 
-Controle financeiro simples, rápido e moderno.
+Controle financeiro simples, rapido e moderno.
 
-Aplicativo web instalável (PWA) para controlar:
+Aplicativo web instalavel (PWA) para controlar:
 
 - Entradas
-- Saídas
+- Saidas
 - Valores a receber
-- Histórico financeiro
+- Historico financeiro
+- Backup local em JSON
 
-Disponível em Português, Español e English.
+Disponivel em Portugues, Espanol e English.
 
 ## Funcionalidades
 
-- Controle financeiro rápido
-- Histórico automático
-- Multilíngue (PT / ES / EN)
-- Instalação no celular
-- Funcionamento offline básico
+- Controle financeiro rapido
+- Historico automatico
+- Multilingue (PT / ES / EN)
+- Instalacao no celular
+- Funcionamento offline
 - Saldo atualizado em tempo real
 - Controle de valores pendentes
-- Interface simples e prática
+- Backup e restauracao local
 
-## App Online
+## App online
 
 https://paulorobertoribeiro.github.io/control-smart-app/
 
-## Publicação Android
+## Android
 
-Este projeto é um PWA. Para publicar na Google Play, gere um arquivo `.aab` com um wrapper Android, por exemplo usando PWABuilder ou criando um projeto Android/Capacitor.
+Este projeto esta preparado para Trusted Web Activity (TWA) via Bubblewrap.
 
-URL do PWA para empacotar:
+URL do PWA:
 
 ```text
 https://paulorobertoribeiro.github.io/control-smart-app/
 ```
 
-## Instalar no Celular
+## Privacidade
 
-Android:
-
-1. Abra o app no Chrome.
-2. Abra o menu.
-3. Selecione "Adicionar à tela inicial".
-4. Instale o aplicativo.
-
-iPhone:
-
-1. Abra no Safari.
-2. Toque em Compartilhar.
-3. Selecione "Adicionar à Tela de Início".
+Os dados ficam no armazenamento local do dispositivo. O app nao envia movimentos financeiros para servidores externos.
 
 ## Tecnologias
 

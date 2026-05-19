@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#3498db">
-  <meta name="description" content="Control Smart: controle financeiro simples para entradas, saídas e valores a receber.">
+  <meta name="description" content="Control Smart: controle financeiro simples para entradas, saidas e valores a receber.">
   <title>Control Smart</title>
 
   <link rel="stylesheet" href="css/style.css">
@@ -13,66 +13,64 @@
 </head>
 
 <body>
-
 <header>
-  <h1>💰 Control Smart</h1>
-  <p id="frase-app" style="font-size:13px;opacity:0.8"></p>
+  <h1>Control Smart</h1>
+  <p id="frase-app" class="frase-app"></p>
 
   <div id="cabecalho-info">
-    <p id="saldo">Saldo: €0,00</p>
-    <p id="dividas-pendentes">Valores a Receber: €0,00</p>
+    <p id="saldo">Saldo: EUR 0.00</p>
+    <p id="dividas-pendentes">Valores a receber: EUR 0.00</p>
   </div>
 
-  <div id="seletor-idioma">
-    <button data-idioma="pt">PT</button>
-    <button data-idioma="es">ES</button>
-    <button data-idioma="en">EN</button>
-  </div>
-
-  <div id="upgrade-pro-area">
-    <button id="btn-upgrade-pro">🔓 Desbloquear versão PRO</button>
+  <div id="seletor-idioma" aria-label="Selecionar idioma">
+    <button type="button" data-idioma="pt">PT</button>
+    <button type="button" data-idioma="es">ES</button>
+    <button type="button" data-idioma="en">EN</button>
   </div>
 </header>
 
-<nav class="abas">
-  <button class="aba-btn ativa" data-aba="dashboard">📊 Dashboard</button>
-  <button class="aba-btn" data-aba="historico">📋 Histórico</button>
-  <button class="aba-btn" data-aba="backup">💾 Backup</button>
+<nav class="abas" aria-label="Navegacao principal">
+  <button type="button" class="aba-btn ativa" data-aba="dashboard">Dashboard</button>
+  <button type="button" class="aba-btn" data-aba="historico">Historico</button>
+  <button type="button" class="aba-btn" data-aba="backup">Backup</button>
 </nav>
 
 <main>
   <section id="dashboard" class="aba-conteudo ativa">
-    <canvas id="graficoFinanceiro"></canvas>
+    <canvas id="graficoFinanceiro" width="420" height="260" aria-label="Grafico financeiro"></canvas>
   </section>
 
   <section id="historico" class="aba-conteudo">
-    <h2 id="historico-titulo">Histórico</h2>
+    <h2 id="historico-titulo">Historico</h2>
     <ul id="historico-lista"></ul>
   </section>
 
   <section id="backup" class="aba-conteudo">
     <div class="backup-area">
-      <button id="btn-exportar">📥 Exportar Dados</button>
-      <input type="file" id="input-importar" hidden>
-      <button id="btn-importar">📤 Importar Dados</button>
+      <button type="button" id="btn-exportar">Exportar dados</button>
+      <input type="file" id="input-importar" accept="application/json,.json" hidden>
+      <button type="button" id="btn-importar">Importar dados</button>
     </div>
   </section>
 
-  <section class="add">
+  <section class="add" aria-label="Adicionar movimento">
     <select id="tipo">
       <option value="entrada">Entrada</option>
-      <option value="saida">Saída</option>
-      <option value="divida">Valores a Receber</option>
+      <option value="saida">Saida</option>
+      <option value="divida">Valores a receber</option>
     </select>
 
-    <input type="number" id="valor" placeholder="Valor (€)">
-    <input type="text" id="descricao" placeholder="Descrição">
+    <input type="number" id="valor" min="0" step="0.01" inputmode="decimal" placeholder="Valor (EUR)">
+    <input type="text" id="descricao" maxlength="80" placeholder="Descricao">
 
-    <button id="btn-adicionar" class="botao-adicionar">Adicionar</button>
+    <button type="button" id="btn-adicionar" class="botao-adicionar">Adicionar</button>
   </section>
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<footer>
+  <a href="privacy.html">Privacidade</a>
+</footer>
+
 <script type="module" src="js/app.js"></script>
 
 <script>
@@ -97,6 +95,5 @@ botoesAbas.forEach(botao => {
   });
 });
 </script>
-
 </body>
 </html>

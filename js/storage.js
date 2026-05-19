@@ -2,7 +2,12 @@ const STORAGE_KEY = 'dados';
 const IDIOMA_KEY = 'idioma';
 
 export function carregarDados() {
-  return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  try {
+    const dados = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    return Array.isArray(dados) ? dados : [];
+  } catch {
+    return [];
+  }
 }
 
 export function salvarDados(dados) {
@@ -10,7 +15,8 @@ export function salvarDados(dados) {
 }
 
 export function carregarIdioma() {
-  return localStorage.getItem(IDIOMA_KEY) || 'es';
+  const idioma = localStorage.getItem(IDIOMA_KEY) || 'pt';
+  return ['pt', 'es', 'en'].includes(idioma) ? idioma : 'pt';
 }
 
 export function salvarIdioma(idioma) {

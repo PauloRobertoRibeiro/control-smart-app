@@ -2,204 +2,95 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+  min-height: 100vh;
+  background: #1f2433;
   color: #fff;
-  padding: 15px;
+  padding: 16px;
 }
 
-/* ===== HEADER ===== */
 header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 header h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.frase-app {
+  font-size: 13px;
+  opacity: 0.82;
+  margin-bottom: 12px;
 }
 
 #cabecalho-info {
-  background: #27293d;
+  background: #2b3145;
   padding: 15px;
-  border-radius: 12px;
-  margin-bottom: 15px;
+  border-radius: 8px;
+  margin-bottom: 14px;
 }
 
 #saldo {
   font-size: 20px;
-  font-weight: bold;
-  color: #4cd137;
+  font-weight: 700;
+  color: #59d172;
 }
 
 #dividas-pendentes {
   font-size: 16px;
-  color: #fbc531;
+  color: #ffd166;
+  margin-top: 4px;
 }
 
-/* ===== IDIOMA ===== */
-#seletor-idioma button {
-  background: #353b48;
+#seletor-idioma {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+#seletor-idioma button,
+.aba-btn,
+.botao-adicionar,
+#btn-exportar,
+#btn-importar,
+.botao-apagar,
+.botao-pagar {
   border: none;
-  color: white;
-  padding: 6px 10px;
-  margin: 3px;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  font-weight: 600;
 }
 
-#seletor-idioma button:hover {
-  background: #00a8ff;
+#seletor-idioma button {
+  background: #3a4258;
+  color: white;
+  padding: 7px 11px;
 }
 
-/* ===== FORMULÁRIO ===== */
-.add {
-  background: #27293d;
-  padding: 15px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.add select,
-.add input {
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  font-size: 14px;
-}
-
+#seletor-idioma button:hover,
+.aba-btn.ativa,
 .botao-adicionar {
   background: #00a8ff;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
-.botao-adicionar:hover {
-  background: #0097e6;
-}
-
-/* ===== HISTÓRICO ===== */
-.lista {
-  background: #27293d;
-  padding: 15px;
-  border-radius: 12px;
-}
-
-#historico {
-  list-style: none;
-  margin-top: 10px;
-}
-
-#historico li {
-  background: #353b48;
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-/* ===== CORES POR TIPO ===== */
-.entrada {
-  border-left: 5px solid #4cd137;
-}
-
-.saida {
-  border-left: 5px solid #e84118;
-}
-
-.divida {
-  border-left: 5px solid #fbc531;
-}
-
-/* ===== BOTÕES ===== */
-.botao-apagar {
-  background: #e84118;
-  border: none;
-  padding: 6px;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.botao-pagar {
-  background: #4cd137;
-  border: none;
-  padding: 6px;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-/* ===== RESPONSIVO ===== */
-@media (min-width: 600px) {
-  body {
-    max-width: 500px;
-    margin: auto;
-  }
-}
-.backup-area {
-  margin-top: 15px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
-#btn-exportar,
-#btn-importar {
-  background: #8c7ae6;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  font-size: 13px;
-  transition: 0.3s;
-}
-
-#btn-exportar:hover,
-#btn-importar:hover {
-  background: #7158e2;
-}
-canvas {
-  margin-top: 15px;
-  background: #27293d;
-  padding: 10px;
-  border-radius: 12px;
-}
 .abas {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
   margin-bottom: 15px;
 }
 
 .aba-btn {
-  background: #353b48;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 8px;
+  background: #3a4258;
   color: white;
-  cursor: pointer;
-  transition: 0.3s;
+  min-height: 40px;
+  padding: 8px;
   font-size: 14px;
-}
-
-.aba-btn.ativa {
-  background: #00a8ff;
 }
 
 .aba-conteudo {
@@ -210,6 +101,125 @@ canvas {
   display: block;
 }
 
+#graficoFinanceiro {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #2b3145;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
 
+.add {
+  background: #2b3145;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 16px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
+.add select,
+.add input {
+  width: 100%;
+  padding: 11px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 15px;
+}
 
+.add input:focus,
+.add select:focus {
+  outline: 2px solid #00a8ff;
+}
+
+.botao-adicionar {
+  color: #fff;
+  min-height: 44px;
+  font-size: 15px;
+}
+
+#historico-titulo {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#historico-lista {
+  list-style: none;
+}
+
+#historico-lista li {
+  background: #2b3145;
+  padding: 11px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#historico-lista li.entrada {
+  border-left: 5px solid #59d172;
+}
+
+#historico-lista li.saida {
+  border-left: 5px solid #ff6b6b;
+}
+
+#historico-lista li.divida {
+  border-left: 5px solid #ffd166;
+}
+
+#historico-lista li.historico-vazio {
+  color: rgba(255, 255, 255, 0.78);
+  border-left: none;
+}
+
+.botao-apagar,
+.botao-pagar {
+  color: white;
+  padding: 8px;
+  font-size: 13px;
+}
+
+.botao-apagar {
+  background: #e84118;
+}
+
+.botao-pagar {
+  background: #2fbf71;
+}
+
+.backup-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+#btn-exportar,
+#btn-importar {
+  background: #6c63ff;
+  color: white;
+  min-height: 42px;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+footer a {
+  color: #9bdcff;
+}
+
+@media (min-width: 640px) {
+  body {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
