@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.controlsmart.app",
+      "sha256_cert_fingerprints": [
+        "53:85:DD:79:47:DD:FB:CF:24:AE:02:76:21:28:CA:E4:49:C2:3E:B0:E3:26:1D:63:F1:53:91:DE:0B:E0:78:0B"
+      ]
+    }
+  }
+]
